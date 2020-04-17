@@ -5,9 +5,11 @@ import numpy as np
 def EdgeDetection(img):
     # Gray -> Blur -> and Canny Process
     gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
-    blur = cv.GaussianBlur(gray, (5, 5), 0)
-    # blur = cv.GaussianBlur(gray, (3, 3), 0)
-    edged = cv.Canny(blur, 100, 150)
+
+    blur = cv.GaussianBlur(gray, (1, 1), 0)
+    # blur = cv.blur(img, (3, 3))
+
+    edged = cv.Canny(blur, 100, 100)
     # edged = cv.Canny(blur, 100, 200)
     return edged
 
